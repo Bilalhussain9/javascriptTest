@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<style>
+  .changecolor {
+    color: red;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Save data
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="form-check my-5 ">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                    onchange="">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Basic Info
+                  </label>
+                  <p id="showtext1" class="changecolor">required</p>
+                  <button onclick="updated(0)">edit</button>
+                </div>
+                <div class="form-check my-5 ">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    business info
+                  </label>
+                  <p id="showtext2" class="changecolor">required</p>
+                  <button onclick="updated(1)">edit</button>
+                </div>
+                <div class="form-check my-5 ">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    find us
+                  </label>
+                  <p id="showtext3" class="changecolor">required</p>
+                  <button onclick="updated(2)">edit</button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-8 ">
+        <div>
+          <button type="button" class="btn btn-success" onclick="publishdata()">Publish</button>
+        </div>
+        <div id="hhh">
+          <div id="Basicinfo">
+            <h1>Give user Basic info on your business</h1>
+            <input class="w-100 py-2 my-3" type="text" name="" id="name" placeholder="Name"><br>
+            <input class="w-100 py-2 my-3" type="text" name="" id="email" placeholder="Email"><br>
+            <input class="des w-100 py-5" type="text" name="" id="description" placeholder="Business Description"><br>
+            <button type="button" class="btn btn-success mt-4" onclick="Basicinfo()" id="buttons">conform</button>
+
+          </div>
+
+          <div id="businessinfo">
+            <h1>Give user Basic info on your business</h1>
+            <div>
+              <h3>*Select One</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="Select1" id="ecommerce">
+                <label class="form-check-label" for="ecommerce">
+                  E-Commerce
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input " type="radio" name="Select1" id="Retail">
+                <label class="form-check-label" for="Retail">
+                  Retail ,in store only
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input " type="radio" name="Select1" id="RetailBoth">
+                <label class="form-check-label" for="RetailBoth">
+                  Retail ,both online and store
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input " type="radio" name="Select1" id="storefront">
+                <label class="form-check-label" for="storefront">
+                  service with storefront
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input " type="radio" name="flexRadioDefault" id="withoutstorefront">
+                <label class="form-check-label" for="withoutstorefront">
+                  service without storefront
+                </label>
+              </div>
+
+            </div>
+
+            <div>
+              <h3>*type of business</h3>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="typebusiness" id="service">
+                <label class="form-check-label" for="service">
+                  service
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input " type="radio" name="typebusiness" id="Retail">
+                <label class="form-check-label" for="Retail">
+                  brand
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input " type="radio" name="typebusiness" id="RetailBoth">
+                <label class="form-check-label" for="RetailBoth">
+                  100% eco-marketing
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input " type="radio" name="typebusiness" id="storefront">
+                <label class="form-check-label" for="storefront">
+                  partial eco-marketing
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input " type="radio" name="typebusiness" id="withoutstorefront">
+                <label class="form-check-label" for="withoutstorefront">
+                  Reseller
+                </label>
+              </div>
+
+            </div>
+            <div>
+              <h2>complany launch year*</h2>
+              <input type="text" name="" id="year" placeholder="launch years">
+            </div>
+            <button type="button" class="btn btn-success mt-4" id="buttons" onclick="businessinfo()">conform</button>
+
+          </div>
+
+          <div id="findus">
+            <div>
+              <h1>find us</h1>
+
+              <h3>
+                let the user know where they can find your product online
+              </h3>
+
+
+              <input type="text" name="" id="busname" placeholder="business name ">
+              <input type="text" name="" id="datahttp" placeholder="https:// "><br>
+              <div id="dynamicInputs"></div>
+              <button type="button" class="btn btn-danger mt-4" id="addInput" onclick="addInputFields()">Add Input
+                Fields</button>
+              <button type="button" class="btn btn-danger mt-4" id="buttons" onclick="findusto()">conform</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var arr = [];
+
+    function $(a) {
+      return document.getElementById(a);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      $("Basicinfo").style.display = "none";
+      $("businessinfo").style.display = "none";
+      $("findus").style.display = "none";
+
+      var radioButtons = document.getElementsByName("flexRadioDefault");
+
+      for (var i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].addEventListener("change", function () {
+          showSections();
+        });
+      }
+
+      function showSections() {
+        var radioBtn1 = $("flexRadioDefault1");
+        var radioBtn2 = $("flexRadioDefault2");
+        var radioBtn3 = $("flexRadioDefault3");
+
+        if (radioBtn1.checked) {
+          $("businessinfo").style.display = "none";
+          $("findus").style.display = "none";
+          $("Basicinfo").style.display = "block";
+          $("hhh").style.display = "block";
+        } else if (radioBtn2.checked) {
+          $("Basicinfo").style.display = "none";
+          $("findus").style.display = "none";
+          $("businessinfo").style.display = "block";
+          $("hhh").style.display = "block";
+        } else if (radioBtn3.checked) {
+          $("Basicinfo").style.display = "none";
+          $("businessinfo").style.display = "none";
+          $("findus").style.display = "block";
+          $("hhh").style.display = "block";
+        } else {
+          $("Basicinfo").style.display = "none";
+          $("businessinfo").style.display = "none";
+          $("findus").style.display = "none";
+          $("hhh").style.display = "none";
+        }
+      }
+    });
+
+    function Basicinfo() {
+      if ($('name').value != "" && $('email').value != "" && $('description').value != "") {
+        let basicdata = {
+          name: $('name').value,
+          email: $('email').value,
+          description: $('description').value,
+        }
+        arr.push(basicdata);
+        console.log(arr);
+        let showtext3 = document.getElementById("showtext1");
+        showtext3.innerText = 'Saved';
+        showtext3.style.color = 'green';
+        $("flexRadioDefault2").click();
+      } else {
+        alert("Please fail the data");
+      }
+
+
+    }
+
+    function businessinfo() {
+      let selectedType1 = document.querySelector('input[name="Select1"]:checked');
+      let selectedType2 = document.querySelector('input[name="typebusiness"]:checked');
+      let launchYear = $('year').value;
+
+      if (selectedType1 && selectedType2 && launchYear !== "") {
+        let businessdata = {
+          type1: selectedType1.value,
+          type2: selectedType2.value,
+          launchYear: launchYear,
+        };
+
+        arr.push(businessdata);
+        console.log(arr);
+        let showtext3 = document.getElementById("showtext2");
+        showtext3.innerText = 'Saved';
+        showtext3.style.color = 'green';
+        $("flexRadioDefault3").click();
+      } else {
+        alert("Please fill all the required fields for Business Info");
+      }
+    }
+
+    function findusto() {
+      let busname = $('busname').value;
+      let datahttp = $('datahttp').value;
+
+      if (busname !== "" && datahttp !== "") {
+        let findusdata = {
+          busname: busname,
+          datato: datahttp,
+        };
+        var additionalBusnames = document.getElementsByName("additionalBusname");
+        var additionalDatahttps = document.getElementsByName("additionalDatahttp");
+
+        for (let i = 0; i < additionalBusnames.length; i++) {
+          let dynamicBusname = additionalBusnames[i].value;
+          let dynamicDatahttp = additionalDatahttps[i].value;
+
+          if (dynamicBusname.trim() !== "") {
+            findusdata[dynamicBusname] = dynamicDatahttp;
+          }
+        }
+
+        arr.push(findusdata);
+        console.log(arr);
+        let showtext3 = document.getElementById("showtext3");
+        showtext3.innerText = 'Saved';
+        showtext3.style.color = 'green';
+      } else {
+        alert("Please fill all the required fields for Find Us");
+      }
+    }
+
+
+
+
+    function updated(ind) {
+      $('name').value = arr[ind].name;
+      $('email').value = arr[ind].email;
+      $('description').value = arr[ind].description;
+      let b = $('buttons');
+      b.innerText = "Update"
+      b.onclick = function () {
+        updateData(ind);
+      };
+    }
+
+    function updateData(ind) {
+      arr[ind].name = $('name').value;
+      arr[ind].email = $('email').value;
+      arr[ind].description = $('description').value;
+      let b = $('buttons');
+      b.innerText = "conform";
+      b.onclick = function () {
+        if ($("flexRadioDefault1").checked) {
+          Basicinfo();
+        } else if ($("flexRadioDefault2").checked) {
+          businessinfo();
+        } else if ($("flexRadioDefault3").checked) {
+          findusto();
+        }
+
+      };
+      console.log("Updated Array:", arr);
+
+    }
+    var arr2 = [];
+    function showUpdatedData() {
+      arr2.push(arr)
+      console.log("Updated Array:", arr);
+      console.log("pusharray", arr2)
+
+    }
+
+    function publishdata() {
+      arr2.push(arr)
+      let elements = document.getElementsByClassName("changecolor");
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].innerText = 'publish';
+        elements[i].style.color = 'blue';
+      }
+      console.log("Updated Array:", arr);
+      console.log("pusharray", arr2)
+    }
+
+
+
+    function addInputFields() {
+      var dynamicInputsContainer = $("dynamicInputs");
+
+      var inputName = document.createElement("input");
+      inputName.type = "text";
+      inputName.name = "additionalBusname";
+      inputName.placeholder = "Additional Business Name";
+      dynamicInputsContainer.appendChild(inputName);
+
+      var inputDatahttp = document.createElement("input");
+      inputDatahttp.type = "text";
+      inputDatahttp.name = "additionalDatahttp";
+      inputDatahttp.placeholder = "Additional Data HTTP";
+      dynamicInputsContainer.appendChild(inputDatahttp);
+
+      dynamicInputsContainer.appendChild(document.createElement("br"));
+    }
+  </script>
+
+</body>
+
+</html>
